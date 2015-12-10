@@ -109,23 +109,23 @@ var FilteredChecklist = React.createClass({
     var checklistItems = (this.props.groupBy) ? this.getItemsCheckedGroupBy() : this.getItemsChecked();
 
     return (
-      <div className="rcm-filtered-checklist" tabIndex="0" onFocus={this.onFocus}>
-        <div className="header">
-          <div className="rcm-filter-box">
+      <tbody className="rcm-filtered-checklist" tabIndex="0" onFocus={this.onFocus}>
+        <tr className="header">
+          <td className="rcm-filter-box">
             <input  type="text" 
                     ref="input"
                     onChange={this.handleFilterChange} 
                     placeholder="Type to filter..." 
                     value={this.props.filterValue}/>
             <button className="clear-filter" name="clear-filter" onClick={this.clearFilter}>&#215;</button>
-          </div>
-        </div>
-        <div className="content">
-          <SizeBox className="overflow-y rsx-SizeBox" heightProp="height">
-            <Checklist checklistItems={checklistItems}/>
-          </SizeBox>
-        </div>
-      </div>
+          </td>
+        </tr>
+        <tr className="content">
+            <SizeBox className="overflow-y rsx-SizeBox" heightProp="height">
+              <Checklist checklistItems={checklistItems}/>
+            </SizeBox>
+        </tr>
+      </tbody>
     );
   }
 });

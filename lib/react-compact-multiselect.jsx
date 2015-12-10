@@ -104,7 +104,7 @@ var ReactCompactMultiselect = React.createClass({
         <DropButton layoutMode={this.props.layoutMode} onOpen={this.focusChecklist} ref="DropButton" label={label}>
           <DropTrigger>{label} {selectedCount} </DropTrigger>
           <DropBoxContent>
-            <div className="fluid-layout">
+            <table className="fluid-layout" cellSpacing="0">
               <FilteredChecklist 
                 ref="FilteredCheckList"
                 options={this.props.options}
@@ -114,14 +114,14 @@ var ReactCompactMultiselect = React.createClass({
                 onFilterValueChange={this.filterValueChange}
                 value={this.state.value}
                 filterValue={this.state.filterValue} />
-              <div className="footer">
-                <div className="rcm-menu">
+              <tr className="footer">
+                <td className="rcm-menu">
                   <button ref="rcm-select-all" className="select-all" name="select-all" onClick={this.selectAll}><span>Select All</span></button>
                   <button ref="rcm-deselect-all" className="deselect-all" name="deselect-all" onClick={this.deselectAll}><span>Deselect All</span></button>
                   <button ref="rcm-done" className="done-selecting-button" name="done" onClick={this.doneSelecting}>Done</button>
-                </div>
-              </div>
-            </div>
+                </td>
+              </tr>
+            </table>
           </DropBoxContent>
         </DropButton>
       </div>

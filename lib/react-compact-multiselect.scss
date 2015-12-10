@@ -31,26 +31,28 @@ $dropbox-minheight: $checklist-minheight + (16 * 8.5); //assumes em = 16px, 8.3 
 	.fluid-layout {
 		width:100%;
 		height:100%;
-		display: table;
-		& > div.rcm-filtered-checklist {
-			display: table;
-			height: 100%;
-			width: 100%;
 
-			& > div.header {display: table-row;height:1px;}
-			& > div.content {
-				overflow:hidden!important;
-				position:relative;
-				display: table;
-				height: 100%;
-				width: 100%;
-			}
-		}
-		& > div.footer {display:table-row;height:1px;}
+		tr.header,
+		tr.footer {height:1px;}
+		tr.content {height: 100%;}
 		.overflow-y {
-			width: 100%;
-			height: 100%;
+			position: relative;
 		}
+	}
+
+	.fluid-layout2 {
+		width:100%;
+		height:100%;
+
+		.tr {
+			display: table-row;
+			&.header,
+			&.footer {
+				height:1px;
+			}
+			&.content {height:100%;}
+		}
+		.td {display: table-cell;}
 	}
 
 	.rcm-selected-count {
@@ -179,6 +181,8 @@ $dropbox-minheight: $checklist-minheight + (16 * 8.5); //assumes em = 16px, 8.3 
 		padding: 0;
 		overflow-y: auto;
 		min-height: 100%;
+		position: absolute;
+		top:0;
 
 		.rcm-checklist-item {
 			@extend .user-select-none;
