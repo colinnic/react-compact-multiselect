@@ -33,6 +33,6 @@
     "lazy.js": "^0.4.0",
     "react": "~0.13.3",
     "react-drop-button": "git+https://github.com/BI/react-drop-button",
-    "react-sizebox": "git://github.com/BI/react-sizebox"
+    "react-sizebox": "git://github.com/BI/react-sizebox#td-test"
   }
 }
